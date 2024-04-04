@@ -1,16 +1,11 @@
 package com.Bankingapp.Bankingapp.repository;
 
+import java.util.UUID;
+
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.stereotype.Repository;
 
-import com.Bankingapp.Bankingapp.entity.User;
+import com.Bankingapp.Bankingapp.entity.UserModel;
 
-
-
-@Repository
-	public interface UserRepository extends JpaRepository<User, Long> {
-	    User findByUsername(String username);
-	}
-
-
-
+public interface UserRepository extends JpaRepository<UserModel,UUID> {
+    UserModel findByUserName(String userName);
+}
